@@ -6,23 +6,50 @@ import {
   Divider,
   Stack,
   Button,
+  Icon,
 } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
+import CodePenLogo from "../Assets/Logos/CodepenLogo.svg";
 
-const socials = [
-  { title: "GitHub", icon: <GitHubIcon />, link:"https://github.com/BenWanless"},
-  { title: "Codepen", icon: <GitHubIcon />, link:"https://codepen.io/BenWanless"},
-  { title: "LinkedIn", icon: <LinkedInIcon />, link:"https://www.linkedin.com/in/benwanless/" },
-  { title: "Email", icon: <EmailIcon />, link:"mailto:bwanless@hotmail.ca" },
-];
+const useStyles = makeStyles({
+  imageIcon: {
+    display: 'flex',
+    height: 'inherit',
+    width: 'inherit'
+  },
+});
 
 function Contact() {
+  const classes = useStyles();
+  const socials = [
+    {
+      title: "GitHub",
+      icon: <GitHubIcon />,
+      link: "https://github.com/BenWanless",
+    },
+    {
+      title: "Codepen",
+      icon: (
+        <Icon>
+          <img className={classes.imageIcon} src={CodePenLogo}/>
+        </Icon >
+      ),
+      link: "https://codepen.io/BenWanless",
+    },
+    {
+      title: "LinkedIn",
+      icon: <LinkedInIcon />,
+      link: "https://www.linkedin.com/in/benwanless/",
+    },
+    { title: "Email", icon: <EmailIcon />, link: "mailto:bwanless@hotmail.ca" },
+  ];
   return (
     <Container maxWidth="xl" id="contact">
       <Typography variant="h3">contact me</Typography>
-      <Box sx={{display: "flex", justifyContent:"center"}}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Stack
           direction={{ xs: "column", sm: "row" }}
           divider={<Divider orientation="vertical" flexItem />}
@@ -38,7 +65,7 @@ function Contact() {
               }}
               href={site.link}
               startIcon={site.icon}
-              sx={{ my: 2, color: "white",  }}
+              sx={{ my: 2, color: "white" }}
             >
               {site.title}
             </Button>

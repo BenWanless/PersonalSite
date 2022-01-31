@@ -7,27 +7,47 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
+  Icon,
+  ListSubheader,
 } from "@mui/material";
-import { ReactComponent as ConestogaLogo } from "../Assets/Logos/Conestoga__Logo.svg";
-import { ReactComponent as BrainStationLogo } from "../Assets/Logos/BrainStation__Logo.svg";
+import { makeStyles } from "@mui/styles";
+import ConestogaLogo from "../Assets/Logos/Conestoga__Logo.svg";
+import BrainStationLogo from "../Assets/Logos/BrainStation__Logo.svg";
 
-const education = [
-  {
-    degree: "BASc, Mechanical Systems Engineering (2021)",
-    institution: "Conestoga College",
-    icon: <ConestogaLogo />,
+const useStyles = makeStyles({
+  imageIcon: {
+    display: "flex",
+    height: "inherit",
+    width: "inherit",
   },
-  {
-    degree: "Web Development Diploma (2021)",
-    institution: "BrainStation",
-    icon: <BrainStationLogo />,
-  },
-];
+});
 
 function Education() {
+  const classes = useStyles();
+  const education = [
+    {
+      degree: "BASc, Mechanical Systems Engineering (2021)",
+      institution: "Conestoga College",
+      icon: (
+        <Icon>
+          <img className={classes.imageIcon} src={ConestogaLogo} />
+        </Icon>
+      ),
+    },
+    {
+      degree: "Web Development Diploma (2021)",
+      institution: "BrainStation",
+      icon: (
+        <Icon>
+          <img className={classes.imageIcon} src={BrainStationLogo} />
+        </Icon>
+      ),
+    },
+  ];
+
   return (
-    <Container maxWidth="xl" id="experience">
-      <Typography variant="h3">education</Typography>
+    <Box>
+      <Typography variant="h6">Education</Typography>
       <List>
         {education.map((education) => (
           <ListItem>
@@ -39,7 +59,7 @@ function Education() {
           </ListItem>
         ))}
       </List>
-    </Container>
+    </Box>
   );
 }
 
