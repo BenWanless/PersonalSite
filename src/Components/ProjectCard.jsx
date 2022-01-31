@@ -11,8 +11,8 @@ import {
   Paper,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import StriveFitnessPhoto from "../Assets/images/StriveFitness__photo.svg";
-import StriveFitnessLogo from "../Assets/Logos/StriveFitness__Logo.svg";
+// import StriveFitnessPhoto from "../Assets/images/StriveFitness__photo.svg";
+// import StriveFitnessLogo from "../Assets/Logos/StriveFitness__Logo.svg";
 
 const chipData = [
   { key: 0, label: "React" },
@@ -24,7 +24,9 @@ const chipData = [
   { key: 6, label: "MySQL" },
 ];
 
-function ProjectCard() {
+function ProjectCard(props) {
+  const project = props.project[0];
+  console.log(project.photo)
   return (
     <Card sx={{ display: "flex", gap: "1rem" }}>
       <CardMedia
@@ -34,7 +36,7 @@ function ProjectCard() {
           display: { xs: "none", md: "flex" },
           padding: "3rem 3rem 0 3rem",
         }}
-        image={StriveFitnessPhoto}
+        image={project.photo}
         alt="project picture"
       />
       <CardContent
@@ -48,6 +50,7 @@ function ProjectCard() {
         <Box
           sx={{
             display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
             alignItems: "center",
             justifyContent: "space-between",
           }}
@@ -55,29 +58,26 @@ function ProjectCard() {
           <CardMedia
             component="img"
             sx={{ width: "200px" }}
-            image={StriveFitnessLogo}
+            image={project.logo}
             alt="project picture"
           />
           <Button
-            variant="text"
+            variant="outlined"
             size="large"
             startIcon={<GitHubIcon />}
             onClick={() => {
-              window.open("https://github.com/BenWanless/StriveFitness");
+              window.open(project.link);
             }}
           >
             View on Github
           </Button>
         </Box>
         <Box>
-          <Typography variant="h6" color="secondary" sx={{padding: "1rem 0"}}>
+          <Typography variant="h6" color="secondary" sx={{ padding: "1rem 0" }}>
             Summary
           </Typography>
-          <Typography variant="body1">
-            A fitness app to track your workouts and progress in strength
-            training. BrainStation capstone, 1.5 weeks in length.
-          </Typography>
-          <Typography variant="h6" color="secondary" sx={{padding: "1rem 0"}}>
+          <Typography variant="body1">{project.description}</Typography>
+          <Typography variant="h6" color="secondary" sx={{ padding: "1rem 0" }}>
             Tech Stack
           </Typography>
           <Box
@@ -91,8 +91,8 @@ function ProjectCard() {
             }}
             component="ul"
           >
-            {chipData.map((data) => (
-                <Chip label={data.label}sx={{margin: "0.5rem"}} />
+            {project.tech.map((data) => (
+              <Chip label={data.label} sx={{ margin: "0.5rem" }} />
             ))}
           </Box>
         </Box>
