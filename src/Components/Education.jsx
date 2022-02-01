@@ -51,7 +51,7 @@ function Education() {
       <List>
         {education.map((education) => (
           <ListItem>
-            <ListItemIcon>{education.icon}</ListItemIcon>
+            {/* <ListItemIcon>{education.icon}</ListItemIcon> */}
             <ListItemText
               primary={education.degree}
               secondary={education.institution}
