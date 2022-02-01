@@ -6,27 +6,13 @@ import {
   Typography,
   Box,
   Button,
-  ListItem,
   Chip,
-  Paper,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
-// import StriveFitnessPhoto from "../Assets/images/StriveFitness__photo.svg";
-// import StriveFitnessLogo from "../Assets/Logos/StriveFitness__Logo.svg";
 
-const chipData = [
-  { key: 0, label: "React" },
-  { key: 1, label: "Node.js" },
-  { key: 2, label: "SCSS" },
-  { key: 3, label: "Express" },
-  { key: 4, label: "JWT" },
-  { key: 5, label: "Axios" },
-  { key: 6, label: "MySQL" },
-];
 
 function ProjectCard(props) {
-  const project = props.project[0];
-  console.log(project.photo)
+  const project = props.project;
   return (
     <Card sx={{ display: "flex", gap: "1rem" }}>
       <CardMedia
@@ -57,7 +43,7 @@ function ProjectCard(props) {
         >
           <CardMedia
             component="img"
-            sx={{ width: "200px" }}
+            sx={{ width: "200px",}}
             image={project.logo}
             alt="project picture"
           />

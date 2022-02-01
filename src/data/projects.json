@@ -1,11 +1,11 @@
 [
     {
-     " title": "Strive Fitness (BrainStation Capstone)",
+     "title": "Strive Fitness (BrainStation Capstone)",
       "description":
         "A fitness app to track your workouts and progress in strength training. BrainStation capstone, 1.5 weeks in length.",
-     " link": "https://github.com/BenWanless/StriveFitness",
-      "logo": "../Assets/images/StriveFitness__Logo.svg",
-      "photo": "../Assets/Logos/StriveFitness__photo.svg",
+     "link": "https://github.com/BenWanless/StriveFitness",
+      "logo": "/logos/StriveFitness__Logo.svg",
+      "photo": "/images/StriveFitness__photo.svg",
       "tech": [
         { "key": 0, "label": "React" },
         { "key": 1, "label": "Node.js" },
@@ -21,6 +21,8 @@
       "description":
         "An online site that allows you to scroll through beautiful pictures from the NASA APOD API, With the endless scroll functionality youll be here for hours.",
       "link": "https://github.com/BenWanless/shopify-coding-challenge",
+      "logo": "/logos/Orbit__Logo.svg",
+      "photo": "http://www.fillmurray.com/200/300",
       "tech": [
         { "key": 0, "label": "React" },
         { "key": 1, "label": "Material UI" },
