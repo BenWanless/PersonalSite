@@ -1,13 +1,20 @@
 import React from "react";
-import { Box, Typography, Container } from "@mui/material";
+import Experience from "./Experience";
+import { Box, Typography, Container, Stack, Divider } from "@mui/material";
 
 function About() {
   return (
-      <Container maxWidth="xl" id="about">
-        <Box sx={{}}>
-          <Typography variant="h3">about</Typography>
-        </Box>
-        <Box sx={{ padding: "1rem 0" }}>
+    <Container maxWidth="xl" id="about">
+      <Box sx={{}}>
+        <Typography variant="h3">about</Typography>
+      </Box>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        divider={<Divider orientation="vertical" flexItem />}
+        spacing={2}
+        sx={{ justifyContent: "center" }}
+      >
+        <Box sx={{ padding: "1rem 0", width: "100%" }}>
           <Typography variant="p">
             I am a recent BaSC graduate transitioning to Software Development.
             Recently successfully completed BrainStations Web Development
@@ -24,8 +31,9 @@ function About() {
             or tinkering in my workshop.
           </Typography>
         </Box>
-      </Container>
-
+        <Experience />
+      </Stack>
+    </Container>
   );
 }
 

@@ -1,7 +1,6 @@
 import NavBar from "./Components/NavBar";
 import Banner from "./Components/Banner";
 import About from "./Components/About";
-import Experience from "./Components/Experience";
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
 import { ThemeProvider, createTheme, Box } from "@mui/material";
@@ -43,7 +42,6 @@ function App() {
         <NavBar />
         <Banner />
         <About />
-        <Experience />
         <Projects />
         <Contact />
       </Box>

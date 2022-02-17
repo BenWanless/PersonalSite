@@ -6,10 +6,10 @@ import Skills from "./Skills";
 function Experience() {
   return (
     <Container maxWidth="xl" id="experience">
-      <Typography variant="h3">experience</Typography>
+      {/* <Typography variant="h3">experience</Typography> */}
       <Stack
-         direction={{ xs: "column", sm: "row" }}
-        divider={<Divider orientation="vertical" flexItem />}
+         direction={{ xs: "column",}}
+        divider={<Divider orientation="horizonal" flexItem />}
         spacing={2}
         sx={{ justifyContent:"center"}}
       >
