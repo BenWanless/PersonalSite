@@ -1,6 +1,13 @@
 import React from "react";
 import Experience from "./Experience";
-import { Box, Typography, Container, Stack, Divider } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Container,
+  Stack,
+  Divider,
+  Button,
+} from "@mui/material";
 
 function About() {
   return (
@@ -30,6 +37,17 @@ function About() {
             my free time I enjoy coding, 3D printing, lifting weights in my gym
             or tinkering in my workshop.
           </Typography>
+          <Button
+            variant="outlined"
+            size="large"
+            // startIcon={<GitHubIcon />}
+            onClick={() => {
+              // window.open(project.link);
+              console.log("hello")
+            }}
+          >
+            View Resume
+          </Button>
         </Box>
         <Experience />
       </Stack>
